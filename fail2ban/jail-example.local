@@ -1,0 +1,29 @@
+#
+[DEFAULT]
+ignoreip   = 127.0.0.0/8 10.8.10.0/24
+findtime = 2m
+bantime  = 10m
+maxretry = 3
+destemail  = admin@miraceti.net
+mta        = mail
+action     = %(action_)s
+banaction  = f2b-iptables-multiport
+             f2b-mqtt-action-publisher[action=NOTICE]
+banaction_allports = f2b-iptables-allports
+                     f2b-mqtt-action-publisher[action=NOTICE]
+                     
+# JAILS
+
+[portscan]
+enabled = false
+filter  = portscan
+logpath = /var/log/messages
+action  = f2b-iptables-multiport
+          f2b-mqtt-action-publisher[action=INFO]
+findtime = 2m
+bantime  = 30
+maxretry = 1
+
+
+
+
