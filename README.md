@@ -1,4 +1,4 @@
-# Fail2banMqttActionublisher
+# Fail2banMqttActionPublisher
 Fail2ban action: publish all server banished
 
 ### Actions in action.d
